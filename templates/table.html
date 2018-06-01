@@ -1,0 +1,23 @@
+<!doctype html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<h2>Это сайт на питоне, пристрелите меня кто-нибудь</h2>
+<table>
+  <thead>
+    <th>Номер</th>
+    <th>Имя</th>
+    <th>Год</th>
+    <th>Месяц</th>
+    <th>Количество человек</th>
+  </thead>
+  <tbody>
+    {% for x in data %}
+    <tr>
+      <td>{{ x["Number"] }}</td>
+      <td>{{ x["Cells"]["Name"] }}</td>
+      <td>{{ x["Cells"]["Year"] }}</td>
+      <td>{{ x["Cells"]["Month"] }}</td>
+      <td>{{ x["Cells"]["NumberOfPersons"] }}</td>
+     </tr>
+   {% endfor %}
+  </tbody>
+</table>
